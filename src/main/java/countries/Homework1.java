@@ -77,6 +77,8 @@ public class Homework1 {
      */
     public void streamPipeline8() {
 
+	countries.stream().sorted((x,y)->((Integer) x.getTimezones().size()).compareTo((Integer) y.getTimezones().size())).forEach(x->System.out.println(x.getName()+": "+x.getTimezones().size()));
+
     }
 
     /**
