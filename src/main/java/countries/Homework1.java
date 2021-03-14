@@ -28,14 +28,15 @@ public class Homework1 {
      *  Returns the first country name that contains the word "island" ignoring case.
      */
     public Optional<String> streamPipeline2() {
-	return countries.stream().map(country->country.getName()).map(String::toLowerCase).filter(name->name.contains("island")).findFirst();
+	return countries.stream().map(country->country.getName()).filter(name->name.toLowerCase().contains("island")).findFirst();
+	
     }
 
     /**
      * Prints each country name in which the first and the last letters are the same ignoring case.
      */
     public void streamPipeline3() {
-	countries.stream().map(country->country.getName()).map(String::toLowerCase).filter(x->x.charAt(0)==x.charAt(x.length()-1)).forEach(System.out::println);
+	countries.stream().map(country->country.getName()).filter(x->x.toLowerCase().charAt(0)==x.toLowerCase().charAt(x.length()-1)).forEach(System.out::println);
 
     }
 
