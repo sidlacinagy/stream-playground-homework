@@ -87,7 +87,7 @@ public class Homework2 {
      * Returns the capital with the most number of English vowels (i.e., {@code 'a'}, {@code 'e'}, {@code 'i'}, {@code 'o'}, {@code 'u'}).
      */
     public Optional<String> streamPipeline8() {
-        return countries.stream().map(x -> x.getCapital().toLowerCase()).max((x, y) -> ((Integer) (vowelCount(x))).compareTo(((Integer) (vowelCount(y)))));
+        return countries.stream().map(x -> x.getCapital()).max((x, y) -> ((Integer) (vowelCount(x.toLowerCase()))).compareTo(((Integer) (vowelCount(y.toLowerCase())))));
     }
 
     /**
